@@ -1,7 +1,40 @@
 <script>
+import { computed } from 'vue';
+
     export default { 
         // Add Code Here to complete the task
         // Note: DO NOT USE "eval()". In security, "eval" is considered "evil"!!!
+        data() {
+            return {
+                // SELF ATTEMPT
+                /*
+                x: 0,
+                y: 0,
+                selectedOp: '',
+                operators: ['+', '-', 'x', '/']
+                */
+
+                // IN-CLASS
+                x: 0,
+                y: 0,
+                operators: ['+', '-', '*', '/', '%'],
+                selectedOp: '',
+            }
+        },
+        computed: { // Getter
+            result() {
+                if (this.selectedOp === "+")
+                    return this.x + this.y
+                if (this.selectedOp === "-")
+                    return this.x - this.y
+                if (this.selectedOp === "*")
+                    return this.x * this.y   
+                if (this.selectedOp === "/")
+                    return this.x / this.y 
+                if (this.selectedOp === "%")
+                    return this.x % this.y               
+            }
+        }
     }
 </script>
 
