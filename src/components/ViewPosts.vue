@@ -44,7 +44,7 @@ export default {
                 this.editPostId = id;
             }
         },
-        updatePost(event) {
+        updatePost() {
             const postData = {
                 entry: this.entry,
                 mood: this.mood
@@ -85,7 +85,7 @@ export default {
                     <td>{{ post.id }}</td>
                     <td>{{ post.entry }}</td>
                     <td>{{ post.mood }}</td>
-                    <td><button>Edit</button></td>
+                    <td><button @click="editPost(post.id)">Edit</button></td>
                 </tr>
             </tbody>
 
@@ -106,7 +106,7 @@ export default {
                             <option v-for="mood in moods" :value="mood">{{ mood }}</option>
                         </select>
                     </div>
-                    <button type="submit" class="btn btn-primary">Update Post</button>
+                    <button type="submit" class="btn btn-primary" @click="updatePost">Update Post</button>
                 </form>
             </div>
         </div>
